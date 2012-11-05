@@ -1,10 +1,8 @@
 if (Meteor.isClient) {
-  var dialogCB;
   var openDialog = function(title, message, cb) {
     Session.set('dialogOpen', true);
     Session.set('dialogTitle', title);
     Session.set('dialogMessage', message);
-    dialogCB = cb;
   }
 
   Template.dialog.helpers({
@@ -17,7 +15,7 @@ if (Meteor.isClient) {
     'click .yes': function(e) {
       e.preventDefault();
       Session.set('dialogOpen', false);
-      if (dialogCB) dialogCB(true);
+      Session.set('lastDialogSuccess', true);
     }
   })
 }
