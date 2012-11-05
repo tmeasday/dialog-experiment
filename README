@@ -1,0 +1,10 @@
+### How to make callbacks survive hot code pushes in meteor?
+
+The challenge:
+
+Change this code so that when you:
+
+1. Click the button
+2. Force a hot code push (save a random file in the project)
+3. Click yes on the dialog
+4. << you should see a alert dialog >>
